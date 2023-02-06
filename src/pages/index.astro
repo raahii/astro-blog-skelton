@@ -1,0 +1,25 @@
+---
+const posts = await Astro.glob("./posts/*.md");
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>ようこそ！</h1>
+    <ul>
+      {
+        posts.map(({ url, frontmatter }) => (
+          <li>
+            <a href={url}>{frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+  </head>
+  <body>
+    <article>
+      <h1 class="title">{frontmatter.title}</h1>
+      <time>{frontmatter.pubDate}</time>
+      <hr />
+      <!-- Markdownコンテンツはここに挿入されます -->
+      <slot />
+    </article>
+  </body>
+</html>
